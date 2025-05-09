@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { addCar } from "@/services"; // Misalkan ada service untuk menambahkan mobil
+import { addCar } from "@/services"; 
 import { CheckCircle } from "lucide-react";
 
 interface Form {
@@ -30,11 +30,11 @@ export default function AddCar() {
 
     setIsSubmitting(true);
     try {
-      await addCar(form); // Panggil service untuk menambahkan mobil
+      await addCar(form); 
       setShowAlert(true);
       setTimeout(() => {
         setShowAlert(false);
-        router.push("/cars"); // Redirect ke halaman daftar mobil
+        router.push("/cars"); 
       }, 3000);
     } catch (error) {
       console.error("Failed to add car:", error);

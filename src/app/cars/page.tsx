@@ -28,23 +28,22 @@ import { CheckCircle } from "lucide-react";
 import { DataCar } from "@/types";
 
 export default function Cars() {
-  const [data, setData] = useState<DataCar
-  >([]);
+  const [data, setData] = useState<DataCar>([]);
   const [open, setOpen] = useState<boolean>(false);
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [id, setId] = useState<string>("");
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false); // New loading state
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const getData = async () => {
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
     try {
       const res = await getDataCar();
       setData(res);
     } catch (error) {
       console.error("Error get", error);
     } finally {
-      setIsLoading(false); // End loading
+      setIsLoading(false);
     }
   };
 

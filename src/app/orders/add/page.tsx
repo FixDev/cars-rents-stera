@@ -43,7 +43,7 @@ export default function AddOrder() {
       setForm({
         ...form,
         [name]: value,
-        name: selectedCar ? selectedCar.name : "", // Update name when id changes
+        name: selectedCar ? selectedCar.name : "", 
       });
     } else {
       setForm({ ...form, [name]: value });
@@ -54,11 +54,11 @@ export default function AddOrder() {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await addOrder(form); // Add the order, including id and name
+      await addOrder(form);
       setShowAlert(true);
       setTimeout(() => {
         setShowAlert(false);
-        router.push("/orders"); // Redirect after adding order
+        router.push("/orders");
       }, 3000);
     } catch (error) {
       console.error("Failed to add order", error);
@@ -66,8 +66,6 @@ export default function AddOrder() {
       setIsSubmitting(false);
     }
   };
-
-  console.log(form)
 
   return (
     <div className="p-20">

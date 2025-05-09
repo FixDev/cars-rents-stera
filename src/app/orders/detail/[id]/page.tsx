@@ -2,7 +2,7 @@
 
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { getOrderById } from "@/services"; // Replace with the actual service for fetching order details
+import { getOrderById } from "@/services";
 
 interface Order {
   id: string;
@@ -24,7 +24,7 @@ export default function OrderDetail() {
   const getOrderDetails = async () => {
     if (!id) return;
     try {
-      const res = await getOrderById(id); // Fetch order details by ID
+      const res = await getOrderById(id);
       setOrder(res);
     } catch (error) {
       console.error("Failed to fetch order details:", error);

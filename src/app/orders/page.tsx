@@ -33,17 +33,17 @@ export default function OrdersPage() {
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [id, setId] = useState<string>("");
   const [isDeleting, setIsDeleting] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false); // New loading state
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const fetchOrders = async () => {
-    setIsLoading(true); // Start loading
+    setIsLoading(true);
     try {
       const data = await getDataOrders();
       setOrders(data);
     } catch (error) {
       console.error("Failed to fetch orders", error);
     } finally {
-      setIsLoading(false); // End loading
+      setIsLoading(false);
     }
   };
 

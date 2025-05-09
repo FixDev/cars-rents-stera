@@ -19,7 +19,7 @@ export default function EditOrder() {
     pickup_location: "",
     dropoff_location: "",
   });
-  const [cars, setCars] = useState<DataOrder>(); // Store the list of cars
+  const [cars, setCars] = useState<DataOrder>(); 
   const [showAlert, setShowAlert] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
@@ -30,8 +30,8 @@ export default function EditOrder() {
         const orderData = await getOrderById(id as string);
         setForm(orderData);
 
-        const carData = await getDataOrders(); // Fetch cars data
-        setCars(carData); // Set the cars to the state
+        const carData = await getDataOrders(); 
+        setCars(carData); 
       } catch (error) {
         console.error("Failed to fetch order or cars:", error);
       }
